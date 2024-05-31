@@ -12,9 +12,9 @@ namespace CryptoApp_TestTask.Factory
             return new List<BaseCryptoApiConnector>
             {
                 new BinanceApiConnector(),
-                //new BybitApiConnector(),
-                //new KucoinApiConnector(),
-                //new BitgetApiConnector()
+                new BybitApiConnector(),
+                new KucoinApiConnector(),
+                new BitgetApiConnector()
             };
         }
     }

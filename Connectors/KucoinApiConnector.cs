@@ -1,11 +1,12 @@
-﻿//using CryptoApp_TestTask.Connectors.Base;
+﻿using CryptoApp_TestTask.Connectors.Base;
+using CryptoApp_TestTask.Connectors.SocketClients;
 
-//using Kucoin.Net.Clients;
-
-//namespace CryptoApp_TestTask.Connectors
-//{
-//    public class KucoinApiConnector : BaseCryptoApiConnector
-//    {
-//        public KucoinApiConnector() : base(new KucoinSocketClient()) { }
-//    }
-//}
+namespace CryptoApp_TestTask.Connectors
+{
+    public class KucoinApiConnector : BaseCryptoApiConnector
+    {
+        public KucoinApiConnector() : base(new KucoinApiSocketClient())
+        {
+        }
+    }
+}

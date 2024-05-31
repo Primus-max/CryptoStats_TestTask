@@ -1,13 +1,32 @@
 ﻿using CryptoApp_TestTask.Connectors.Interfaces;
 
+using CryptoExchange.Net.Objects.Sockets;
+
 using System;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CryptoApp_TestTask.Connectors.Base
 {
     public abstract class BaseCryptoApiConnector : ICryptoApiConnector
     {
-        public abstract Task ConnectAsync(string symbol, Action<decimal> onPriceUpdate);
+        protected IApiSocketClient _socketClient;
+        protected UpdateSubscription _subscription;
+
+        public BaseCryptoApiConnector(IApiSocketClient client)
+        {
+            _socketClient = client;
+        }
+
+        public async Task ConnectAsync(string symbol, Action<decimal> noPriceUpdate)
+        {
+            await _socketClient.SubscribeToTickerUpdatesAsync(symbol, noPriceUpdate);
+        }
+
+        public Task DisconnectAsync()
+        {
+            // Реализация отключения от биржи
+            return null;
+        }
+         
     }
 }
