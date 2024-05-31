@@ -126,12 +126,14 @@
     <Compile Include="Connectors\BybitApiConnector.cs" />
     <Compile Include="Connectors\Interfaces\ICryptoApiConnector.cs" />
     <Compile Include="Connectors\KucoinApiConnector.cs" />
+    <Compile Include="Factory\ApiConnectorFactory.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Managers\PriceLabelManager.cs" />
     <Compile Include="Models\Coin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

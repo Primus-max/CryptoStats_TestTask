@@ -1,11 +1,11 @@
-﻿using Bitget.Net.Clients;
+﻿//using Bitget.Net.Clients;
 
-using CryptoApp_TestTask.Connectors.Base;
+//using CryptoApp_TestTask.Connectors.Base;
 
-namespace CryptoApp_TestTask.Connectors
-{
-    public class BitgetApiConnector : BaseCryptoApiConnector
-    {
-        public BitgetApiConnector() : base(new BitgetSocketClient()) { }
-    }
-}
+//namespace CryptoApp_TestTask.Connectors
+//{
+//    public class BitgetApiConnector : BaseCryptoApiConnector
+//    {
+//        public BitgetApiConnector() : base(new BitgetSocketClient()) { }
+//    }
+//}

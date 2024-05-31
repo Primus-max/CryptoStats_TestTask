@@ -30,92 +30,107 @@ namespace CryptoApp_TestTask
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.listView4 = new System.Windows.Forms.ListView();
+            this.comboBoxSymbol = new System.Windows.Forms.ComboBox();
+            this.labelBinance = new System.Windows.Forms.Label();
+            this.labelBybit = new System.Windows.Forms.Label();
+            this.labelKucoin = new System.Windows.Forms.Label();
+            this.labelBitget = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listView1
+            // comboBoxSymbol
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(13, 22);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(400, 224);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.comboBoxSymbol.FormattingEnabled = true;
+            this.comboBoxSymbol.Location = new System.Drawing.Point(27, 46);
+            this.comboBoxSymbol.Name = "comboBoxSymbol";
+            this.comboBoxSymbol.Size = new System.Drawing.Size(227, 21);
+            this.comboBoxSymbol.TabIndex = 0;
             // 
-            // listView2
+            // labelBinance
             // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(428, 22);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(400, 224);
-            this.listView2.TabIndex = 0;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.labelBinance.AutoSize = true;
+            this.labelBinance.Location = new System.Drawing.Point(24, 119);
+            this.labelBinance.Name = "labelBinance";
+            this.labelBinance.Size = new System.Drawing.Size(46, 13);
+            this.labelBinance.TabIndex = 1;
+            this.labelBinance.Text = "Binance";
             // 
-            // listView3
+            // labelBybit
             // 
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(13, 274);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(400, 224);
-            this.listView3.TabIndex = 0;
-            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.labelBybit.AutoSize = true;
+            this.labelBybit.Location = new System.Drawing.Point(24, 151);
+            this.labelBybit.Name = "labelBybit";
+            this.labelBybit.Size = new System.Drawing.Size(30, 13);
+            this.labelBybit.TabIndex = 2;
+            this.labelBybit.Text = "Bybit";
             // 
-            // listView4
+            // labelKucoin
             // 
-            this.listView4.HideSelection = false;
-            this.listView4.Location = new System.Drawing.Point(428, 274);
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(400, 224);
-            this.listView4.TabIndex = 0;
-            this.listView4.UseCompatibleStateImageBehavior = false;
+            this.labelKucoin.AutoSize = true;
+            this.labelKucoin.Location = new System.Drawing.Point(24, 184);
+            this.labelKucoin.Name = "labelKucoin";
+            this.labelKucoin.Size = new System.Drawing.Size(40, 13);
+            this.labelKucoin.TabIndex = 3;
+            this.labelKucoin.Text = "Kucoin";
+            // 
+            // labelBitget
+            // 
+            this.labelBitget.AutoSize = true;
+            this.labelBitget.Location = new System.Drawing.Point(24, 215);
+            this.labelBitget.Name = "labelBitget";
+            this.labelBitget.Size = new System.Drawing.Size(36, 13);
+            this.labelBitget.TabIndex = 4;
+            this.labelBitget.Text = "BitGet";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Выбрать пару";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(179, 262);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Start";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 510);
-            this.Controls.Add(this.listView4);
-            this.Controls.Add(this.listView2);
-            this.Controls.Add(this.listView3);
-            this.Controls.Add(this.listView1);
+            this.ClientSize = new System.Drawing.Size(288, 297);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelBitget);
+            this.Controls.Add(this.labelKucoin);
+            this.Controls.Add(this.labelBybit);
+            this.Controls.Add(this.labelBinance);
+            this.Controls.Add(this.comboBoxSymbol);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+             
 
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ListView listView3;
-        private System.Windows.Forms.ListView listView4;
-
-        private void InitializeListViews()
-        {
-            // Установка столбцов для ListView1
-            listView1.View = View.Details;
-            listView1.Columns.Add("Attribute", 100);
-            listView1.Columns.Add("Value", 300);
-
-            // Установка столбцов для ListView2
-            listView2.View = View.Details;
-            listView2.Columns.Add("Attribute", 100);
-            listView2.Columns.Add("Value", 300);
-
-            // Установка столбцов для ListView3
-            listView3.View = View.Details;
-            listView3.Columns.Add("Attribute", 100);
-            listView3.Columns.Add("Value", 300);
-
-            // Установка столбцов для ListView4
-            listView4.View = View.Details;
-            listView4.Columns.Add("Attribute", 100);
-            listView4.Columns.Add("Value", 300);
-        }
+        private ComboBox comboBoxSymbol;
+        private Label labelBinance;
+        private Label labelBybit;
+        private Label labelKucoin;
+        private Label labelBitget;
+        private Label label1;
+        private Button button1;
     }
 }
 
