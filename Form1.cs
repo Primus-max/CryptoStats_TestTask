@@ -1,16 +1,10 @@
-﻿using Binance.Net.Clients;
-
-using Bitget.Net.Clients;
-
-using CryptoApp_TestTask.Connectors.Base;
+﻿using CryptoApp_TestTask.Connectors.Base;
+using CryptoApp_TestTask.Extensions;
 using CryptoApp_TestTask.Factory;
 using CryptoApp_TestTask.Managers;
 
-using Kucoin.Net.Clients;
-
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -29,7 +23,7 @@ namespace CryptoApp_TestTask
             apis = ApiConnectorFactory.CreateApiConnectors();
             priceLabelManager = new PriceLabelManager(labelBinance, labelBybit, labelKucoin, labelBitget);
 
-            comboBoxSymbol.Items.AddRange(new string[] { "BTCUSDT", "ETHUSDT", "BNBUSDT" });
+            comboBoxSymbol.Items.AddRange(new string[] { "BTC-USDT", "ETH-USDT", "BNB-USDT" });
             comboBoxSymbol.SelectedIndex = 0;
         }
 
@@ -42,7 +36,7 @@ namespace CryptoApp_TestTask
             foreach (var api in apis)
             {
                 var apiName = api.GetType().Name.Replace("ApiConnector", "");
-                await api.ConnectAsync(selectedSymbol, price =>
+                await api.ConnectAsync(selectedSymbol.FormatSymbol(apiName), price =>
                 {
                     this.Invoke(new Action(() =>
                     {
@@ -52,48 +46,5 @@ namespace CryptoApp_TestTask
             }
         }
 
-
-
-
-        //    public async Task BinanceConnectAsync()
-        //    {
-        //        // Subscribe to ETH/USDT ticker updates via the websocket API
-        //        var socketClient = new BinanceSocketClient();
-        //        var tickerSubscriptionResult = socketClient.SpotApi.ExchangeData.SubscribeToTickerUpdatesAsync("ETHUSDT", (update) =>
-        //        {
-        //            var lastPrice = update.Data.LastPrice;
-        //        });
-        //    }
-
-        //    public async Task BybitConnectAsync()
-        //    {
-        //        // Subscribe to ETH/USDT ticker updates via the websocket API
-        //        var socketClient = new KucoinSocketClient();
-        //        var tickerSubscriptionResult = socketClient.SpotApi.SubscribeToTickerUpdatesAsync("ETH-USDT", (update) =>
-        //        {
-        //            var lastPrice = update.Data.LastPrice;
-        //        });
-        //    }
-
-        //    public async Task KucoinConnectAsync()
-        //    {
-        //        // Subscribe to ETH/USDT ticker updates via the websocket API
-        //        var socketClient = new KucoinSocketClient();
-        //        var tickerSubscriptionResult = socketClient.SpotApi.SubscribeToTickerUpdatesAsync("ETH-USDT", (update) =>
-        //        {
-        //            var lastPrice = update.Data.LastPrice;
-        //        });
-        //    }
-
-
-        //    public async Task BitgetConnectAsync()
-        //    {
-        //        var socketClient = new BitgetSocketClient();
-        //        var tickerSubscriptionResult = socketClient.SpotApi.SubscribeToTickerUpdatesAsync("ETHUSDT", (update) =>
-        //        {
-        //            var lastPrice = update.Data.LastPrice;
-        //        });
-        //    }
-        //}
     }
 }

@@ -131,6 +131,7 @@
     <Compile Include="Connectors\SocketClients\BitgetApiSocketClient.cs" />
     <Compile Include="Connectors\SocketClients\BybitApiSocketClient.cs" />
     <Compile Include="Connectors\SocketClients\KucoinApiSocketClient.cs" />
+    <Compile Include="Extensions\SymbolFormatter.cs" />
     <Compile Include="Factory\ApiConnectorFactory.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -139,7 +140,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Managers\PriceLabelManager.cs" />
-    <Compile Include="Models\Coin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -169,7 +169,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Converters\" />
     <Folder Include="EventMediators\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

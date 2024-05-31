@@ -114,8 +114,10 @@ namespace CryptoApp_TestTask
             this.Controls.Add(this.labelBybit);
             this.Controls.Add(this.labelBinance);
             this.Controls.Add(this.comboBoxSymbol);
+            this.MaximumSize = new System.Drawing.Size(304, 336);
+            this.MinimumSize = new System.Drawing.Size(304, 336);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "КриптоАнализатор";
             this.ResumeLayout(false);
             this.PerformLayout();
 
